@@ -9,14 +9,14 @@ The first goal is achieved by providing and Interface, which can be used to inje
 
 The second goal is achieved by using buffered reading. Also, assuming that a very large file might not contain any new line characters, an approach, which stores content of each line in memory had to be avoided.
 
-Main class:  
+**Main class:**  
 ```WordAndLineCounter``` - consumes a stream wrapped with ```CharacterReader``` interface. number of words and lines can be retrieved using its ```getWordCount()``` and ```getLineCount()``` methods. This class was designed to be able to read file of any size: characters are read into a buffer of a 
 
-Public Interfaces:  
+**Public Interfaces:**  
 ```CharacterReader``` - can be used to inject a custom mechanism for reading characters from a stream 
 ```CharacterPatternCounter``` - can be used to inject custom word and line counting mechanisms
 
-Default implementations of public interfaces:  
+**Default implementations of public interfaces:**  
 ```BufferedReaderAdaptor``` - implementation of ```CharacterReader```, which internally wraps a ```java.io.BufferedReader``` around a Reader (provided to the constructor) to enable efficient buffered reading of characters from a stream  
 ```WordCounter``` - implementation of ```CharacterPatternCounter``` interface, which uses ```Character.isWhitespace(char)``` to determine if a character is a word delimiters  
 ```LineCounter``` - implementation of ```CharacterPatternCounter``` interface, which matches any of the three following character patterns as new line: \r, \n, \r\n  

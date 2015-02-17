@@ -2,7 +2,7 @@ current version: 0.0.1
 
 ## DESCRIPTION
 Classes for counting of words and lines in a stream of characters (file, keyboard input etc.). They are designed to be:  
-1. flexible in terms of how words and lines are detected
+1. flexible in terms of how words and lines are detected  
 2. able to process files of any size and content
 
 The first goal is achieved by providing and Interface, which can be used to inject custom word and line counting mechanisms. The word and line counting was also made independent, since in some cases we might not want to threat a new line as word separator.
@@ -34,7 +34,7 @@ BufferedReaderAdaptor reader = new BufferedReaderAdaptor(new FileReader(fileName
 WordAndLineCounter wordAndLineCounter = new WordAndLineCounter(reader);
 
 // retrieve line and word counts
-long lineCount = wordAndLineCounter.getWordCount();
+long lineCount = wordAndLineCounter.getLineCount();
 long wordCount = wordAndLineCounter.getWordCount();
 ```
 
